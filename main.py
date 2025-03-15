@@ -2,10 +2,63 @@ import os
 
 FILE_ICONS = {
     ".py": "",
+    ".js": "",
+    ".ts": "",
+    ".html": "",
+    ".css": "",
+    ".php": "",
+    ".c": "",
+    ".cpp": "",
+    ".java": "",
+    ".rs": "",
+    ".go": "",
+    ".sh": "",
+    ".bat": "",
+
+    ".json": "",
+    ".yaml": "",
+    ".yml": "",
+    ".toml": "",
+    ".xml": "謹",
+    ".csv": "",
+    ".sql": "",
+
     ".txt": "",
-    ".json": "", 
-    "dir": "",  
+    ".md": "",
+    ".pdf": "",
+    ".doc": "",
+    ".docx": "",
+    ".ppt": "",
+    ".pptx": "",
+    ".xls": "",
+    ".xlsx": "",
+
+    ".png": "",
+    ".jpg": "",
+    ".jpeg": "",
+    ".gif": "",
+    ".svg": "",
+    ".mp4": "",
+    ".mkv": "",
+    ".mp3": "",
+    ".wav": "",
+
+    ".zip": "",
+    ".tar": "",
+    ".gz": "",
+    ".rar": "",
+    ".7z": "",
+
+    ".exe": "",
+    ".dll": "",
+    ".iso": "",
+    ".log": "",
+    ".config": "",
+
+    "dir": "",
+    "default": ""
 }
+
 
 def list_dir():
     path = "." 
@@ -21,5 +74,4 @@ def list_dir():
         
         print(f"{icon}  {file}")
 
-if __name__ == "__main__":
-    list_dir()
+list_dir()
