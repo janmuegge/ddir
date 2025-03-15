@@ -1,4 +1,5 @@
 import os
+from colorama import Fore, Style, init
 
 FILE_ICONS = {
     ".py": "",
@@ -59,10 +60,13 @@ FILE_ICONS = {
     "default": ""
 }
 
-
 def list_dir():
-    path = "." 
+    path = "."
     files = os.listdir(path)
+
+    if not files:
+        print("[No files found]")
+        return
 
     for file in files:
         full_path = os.path.join(path, file)
@@ -70,8 +74,12 @@ def list_dir():
             icon = FILE_ICONS["dir"]
         else:
             ext = os.path.splitext(file)[1]
-            icon = FILE_ICONS.get(ext, "")  
-        
+            icon = FILE_ICONS.get(ext, "")
+
+        count_files = len(files)
         print(f"{icon}  {file}")
+    print("---")
+    print("Found {} files".format(count_files))
 
 list_dir()
+

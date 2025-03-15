@@ -1,2 +1,2 @@
 @echo off
-python C:\Users\janmu\Documents\QuickTools\main.py %*
+python C:\Users\janmu\Documents\ddir\main.py %*
