@@ -1,5 +1,6 @@
 import os
 from colorama import Fore, Style, init
+import sys
 
 FILE_ICONS = {
     ".py": "",
@@ -60,10 +61,12 @@ FILE_ICONS = {
     "default": ""
 }
 
-def list_dir():
+def list_dir(extension=None):
     path = "."
     files = os.listdir(path)
-
+    if extension:
+            
+            files = [f for f in files if f.endswith(extension)]
     if not files:
         print("[No files found]")
         return
@@ -81,5 +84,32 @@ def list_dir():
     print("---")
     print("Found {} files".format(count_files))
 
-list_dir()
-
+def main():
+    args = sys.argv[1:]
+    if not args:
+        list_dir()
+    elif args[0] == "-s" or "-sfe":
+        pattern = args[1]
+        if pattern.startswith("*."):
+            extension = pattern[1:]  
+            list_dir(extension)
+        else:
+            print("Wrong command use 'ddir -help / -?' ")
+            
+    elif args[0] in ("-help", "-h", "-?"):
+        print("""commands: 
+              
+              search file extention:
+              - ddir -s | -sfe *.txt
+              
+              help menu
+              - ddir -h | -help | -?
+              
+              """)
+    else:
+        print("Wrong command use 'ddir -help / -?' ")
+        
+        
+        
+        
+main()
